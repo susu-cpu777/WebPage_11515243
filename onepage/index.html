@@ -1,450 +1,1891 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <meta name="description" content="路易莎咖啡 LOUISA COFFEE｜為手沖精品喜好者打造。嚴選全球高階莊園咖啡豆，以職人手沖溫控與金杯準則，喚醒純粹純淨的風土滋味。立即探索當季限量單品豆與品鑑專屬禮遇。">
+  <title>路易莎咖啡 LOUISA COFFEE｜莊園級手沖精品咖啡</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      --orange: #FF6600;
+      --orange-bright: #FF771A;
+      --orange-dark: #D95300;
+      --orange-glow: rgba(255, 102, 0, 0.28);
+      --orange-mist: #FFF5EE;
+      --gold: #DCA153;
+      --gold-light: #F7D7A4;
+      --dark-espresso: #120D0A;
+      --dark-bean: #1E1510;
+      --dark-card: #271C15;
+      --dark-border: rgba(255, 102, 0, 0.18);
+      --cream: #FAF6F0;
+      --cream-warm: #F4EFE6;
+      --text-main: #1D1612;
+      --text-muted: #736358;
+      --text-light-muted: #BAAFA6;
+      --white: #FFFFFF;
+      --shadow-sm: 0 4px 14px rgba(18, 13, 10, 0.08);
+      --shadow-md: 0 12px 32px rgba(18, 13, 10, 0.16);
+      --shadow-orange: 0 10px 28px rgba(255, 102, 0, 0.28);
+      --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font: 16px/1.7 "Noto Sans TC", sans-serif;
+      color: var(--text-main);
+      background-color: var(--cream);
+      font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 18px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
+
+    a { color: inherit; text-decoration: none; transition: var(--transition); }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; border: none; background: none; }
+    ul, ol { list-style: none; }
+
+    .wrap {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
     }
-    .eyebrow::before { width: 28px; height: 1px; background: currentColor; content: ""; }
-    .section-title {
-      margin: 0;
-      font: 800 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .045em;
+    .serif { font-family: "Noto Serif TC", serif; }
+    .display { font-family: "Cinzel", "Noto Serif TC", serif; }
+
+    /* Focus visible */
+    :focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 4px;
     }
-    .text-blue { color: var(--blue); }
-    .button, .outline-link {
+
+    /* Badges & Buttons */
+    .badge {
       display: inline-flex;
-      min-height: 50px;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .badge-orange {
+      color: var(--orange);
+      background: rgba(255, 102, 0, 0.12);
+      border: 1px solid rgba(255, 102, 0, 0.3);
+    }
+    .badge-dark {
+      color: var(--gold-light);
+      background: rgba(220, 161, 83, 0.14);
+      border: 1px solid rgba(220, 161, 83, 0.32);
+    }
+
+    .btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
-      font-size: 14px;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 26px;
+      border-radius: 4px;
+      font-size: 15px;
       font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+      letter-spacing: 0.04em;
+      transition: var(--transition);
+      white-space: nowrap;
     }
-    .button:hover, .outline-link:hover { transform: translateY(-2px); }
-    .button--sand { color: var(--navy); background: var(--sand); }
-    .button--sand:hover { background: #f1cb8b; }
-    .button--dark { color: var(--navy); background: #fff; }
-    .outline-link { border-color: rgba(255,255,255,.72); color: #fff; }
-    .outline-link:hover { color: var(--navy); background: #fff; }
-    :focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
-
-    /* Header & hero */
-    .site-header { position: absolute; z-index: 20; top: 0; left: 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,.28); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; }
-    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid var(--sky); border-radius: 50%; color: var(--sky); font: 700 16px/1 "Playfair Display", serif; }
-    .brand-copy { display: grid; line-height: 1.05; }
-    .brand-copy strong { font-size: 13px; letter-spacing: .08em; }
-    .brand-copy small { margin-top: 4px; font-size: 8px; letter-spacing: .18em; opacity: .7; }
-    .nav-links { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 31px); }
-    .nav-links a { position: relative; color: #fff; font-size: 13px; font-weight: 500; white-space: nowrap; }
-    .nav-links a:not(.nav-cta)::after { position: absolute; right: 0; bottom: -5px; left: auto; width: 0; height: 1px; background: var(--sky); content: ""; transition: width .25s ease; }
-    .nav-links a:not(.nav-cta):hover::after { right: auto; left: 0; width: 100%; }
-    .nav-links .nav-cta { padding: 8px 13px; border: 1px solid rgba(255,255,255,.72); }
-    .nav-links .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); color: #fff; background: transparent; font-size: 23px; line-height: 1; }
-
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); isolation: isolate; }
-    .hero::before { position: absolute; z-index: -2; top: -320px; right: -210px; width: 810px; height: 810px; border-radius: 50%; background: radial-gradient(circle, rgba(117,198,232,.38), rgba(12,91,149,.18) 38%, transparent 69%); content: ""; }
-    .hero::after { position: absolute; z-index: -1; right: 12%; bottom: -430px; width: 780px; height: 780px; border: 1px solid rgba(117,198,232,.18); border-radius: 50%; box-shadow: 0 0 0 65px rgba(117,198,232,.035), 0 0 0 154px rgba(117,198,232,.025); content: ""; }
-    .hero-grid { min-height: 704px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; padding: 122px 0 72px; }
-    .hero-copy { position: relative; z-index: 2; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero h1 { max-width: 650px; margin: 0 0 23px; font: 800 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .hero h1 span { color: var(--sky); }
-    .hero-lede { max-width: 500px; margin: 0; color: rgba(255,255,255,.79); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
-    .hero-note { margin: 31px 0 0; color: rgba(255,255,255,.55); font: 600 11px/1.5 "Playfair Display", serif; letter-spacing: .16em; }
-    .scroll-cue { position: absolute; bottom: 35px; left: 0; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.63); font-size: 10px; font-weight: 600; letter-spacing: .18em; }
-    .scroll-cue::before { width: 38px; height: 1px; background: var(--sky); content: ""; }
-
-    .hero-art { position: relative; align-self: stretch; min-height: 470px; overflow: hidden; }
-    .hero-art .sun { position: absolute; top: 52px; right: 54px; width: clamp(138px, 18vw, 200px); aspect-ratio: 1; border-radius: 50%; background: #b9e8f5; box-shadow: 0 0 0 27px rgba(117,198,232,.09), 0 0 0 59px rgba(117,198,232,.045); }
-    .mountain { position: absolute; right: -11%; bottom: 6px; width: 116%; height: 260px; transform: skewY(-9deg); transform-origin: right bottom; background: linear-gradient(146deg, transparent 0 27%, rgba(61,145,184,.36) 27.3% 48%, rgba(17,97,143,.77) 48.3%); clip-path: polygon(0 62%, 28% 20%, 44% 57%, 68% 4%, 100% 57%, 100% 100%, 0 100%); }
-    .mountain--back { right: 13%; bottom: 98px; width: 108%; height: 220px; opacity: .46; transform: skewY(-4deg); background: #2a81ae; clip-path: polygon(0 84%, 31% 30%, 45% 62%, 66% 9%, 100% 66%, 100% 100%, 0 100%); }
-    .horizon { position: absolute; right: -4%; bottom: 0; width: 116%; height: 112px; background: linear-gradient(90deg, rgba(7,45,75,.5), #0d5684); transform: skewY(-4deg); }
-    .coffee-vessel { position: absolute; z-index: 4; right: 18%; bottom: 36px; width: 192px; height: 274px; filter: drop-shadow(18px 22px 14px rgba(0,0,0,.22)); }
-    .vessel-neck { position: absolute; top: 0; left: 62px; width: 68px; height: 42px; border: 7px solid #b3e2ef; border-bottom: 0; border-radius: 50% 50% 0 0; background: rgba(6,39,66,.62); }
-    .vessel-body { position: absolute; top: 33px; left: 18px; width: 150px; height: 212px; border: 7px solid #b3e2ef; border-radius: 31% 31% 42% 42% / 12% 12% 37% 37%; background: linear-gradient(90deg, rgba(30,112,151,.9), rgba(5,35,60,.9) 45%, rgba(83,167,198,.8)); overflow: hidden; }
-    .vessel-body::before { position: absolute; top: 15px; left: 0; width: 100%; height: 5px; background: rgba(197,237,244,.8); box-shadow: 0 48px rgba(197,237,244,.25), 0 95px rgba(197,237,244,.18), 0 145px rgba(197,237,244,.13); content: ""; }
-    .vessel-body::after { position: absolute; top: 5px; left: 48%; width: 24px; height: 200px; border-radius: 50%; background: rgba(218,247,251,.17); content: ""; }
-    .vessel-handle { position: absolute; right: 0; bottom: 49px; width: 62px; height: 98px; border: 10px solid #a9dce9; border-left: 0; border-radius: 0 53px 53px 0; }
-    .art-label { position: absolute; z-index: 5; right: 0; bottom: 64px; display: grid; gap: 3px; color: rgba(255,255,255,.73); font-size: 11px; letter-spacing: .1em; text-align: right; }
-    .art-label strong { color: var(--sky); font: 700 22px/1 "Playfair Display", serif; }
-
-    /* Story */
-    .story { padding: 118px 0; background: #fff; }
-    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .story-visual { position: relative; min-height: 416px; }
-    .seal { position: absolute; top: 0; left: 0; width: 310px; height: 310px; display: grid; place-items: center; border: 1px solid #a8d2df; border-radius: 50%; color: var(--blue); background: radial-gradient(circle at 35% 30%, #fff 0, #eaf6f8 68%, #d9edf1 100%); }
-    .seal::before, .seal::after { position: absolute; border: 1px solid rgba(12,91,149,.25); border-radius: 50%; content: ""; }
-    .seal::before { inset: 17px; }
-    .seal::after { inset: 44px; border-style: dashed; }
-    .seal-inner { position: relative; z-index: 1; display: grid; gap: 7px; text-align: center; }
-    .seal-inner b { font: 700 42px/1 "Playfair Display", serif; }
-    .seal-inner span { font-size: 13px; font-weight: 700; letter-spacing: .1em; }
-    .seal-inner small { font: 600 9px/1.5 "Playfair Display", serif; letter-spacing: .15em; }
-    .blue-note { position: absolute; right: 0; bottom: 0; width: 235px; padding: 27px 28px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .blue-note .eyebrow { margin-bottom: 9px; color: var(--sky); font-size: 9px; }
-    .blue-note p { margin: 0; font: 700 20px/1.55 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .story-copy p { margin: 19px 0 0; color: var(--muted); }
-    .inline-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid var(--blue); color: var(--blue); font-weight: 700; }
-    .inline-link:hover { color: var(--navy); }
-
-    /* Coffee collection */
-    .coffee { padding: 111px 0 120px; background: var(--mist); }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 39px; }
-    .section-heading p { max-width: 370px; margin: 0; color: var(--muted); }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; display: flex; flex-direction: column; overflow: hidden; padding: 30px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-card::after { position: absolute; right: -90px; bottom: -90px; width: 260px; height: 260px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; box-shadow: 0 0 0 27px rgba(255,255,255,.045), 0 0 0 65px rgba(255,255,255,.025); content: ""; }
-    .card-top, .coffee-card h3, .flavour, .card-footer { position: relative; z-index: 1; }
-    .card-top { color: var(--sky); font: 700 12px/1.3 "Playfair Display", serif; letter-spacing: .12em; }
-    .origin { margin: 25px 0 8px; color: rgba(255,255,255,.69); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
-    .coffee-card h3 { margin: 0; font: 700 26px/1.38 "Noto Serif TC", serif; letter-spacing: .04em; }
-    .flavour { margin: 15px 0 0; color: rgba(255,255,255,.73); font-size: 14px; }
-    .card-footer { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-top: auto; }
-    .price { font: 700 15px/1.3 "Playfair Display", serif; letter-spacing: .04em; }
-    .save-coffee { padding: 0 0 5px; border: 0; border-bottom: 1px solid rgba(255,255,255,.72); color: #fff; background: transparent; font-size: 13px; font-weight: 700; white-space: nowrap; transition: color .2s, border-color .2s; }
-    .save-coffee:hover { border-color: var(--sand); color: var(--sand); }
-
-    /* Brew */
-    .brew { padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(42px, 8vw, 90px); align-items: center; }
-    .brew-art { position: relative; height: 414px; overflow: hidden; background: linear-gradient(136deg, #e3f4f7 0 48%, #f8fcfc 48% 100%); }
-    .brew-art::before { position: absolute; top: 37px; left: 35px; width: 68px; height: 41px; border-top: 1px solid #6cb4ce; border-bottom: 1px solid #6cb4ce; content: ""; }
-    .brew-art::after { position: absolute; top: 57px; left: 35px; width: 43px; border-top: 1px solid #6cb4ce; content: ""; }
-    .water-rings { position: absolute; top: 67px; left: 50%; width: 245px; height: 245px; border: 1px solid rgba(12,91,149,.27); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 0 30px rgba(117,198,232,.12), 0 0 0 74px rgba(117,198,232,.065); }
-    .water-rings::before { position: absolute; top: 18px; left: 50%; width: 1px; height: 58px; background: #6bb8d1; content: ""; transform: translateX(-50%); }
-    .dripper { position: absolute; z-index: 2; top: 134px; left: 50%; width: 147px; height: 151px; border: 7px solid var(--blue); border-top: 0; background: linear-gradient(130deg, rgba(255,255,255,.85), rgba(117,198,232,.25)); clip-path: polygon(0 0, 100% 0, 74% 100%, 26% 100%); transform: translateX(-50%); }
-    .dripper::after { position: absolute; right: 32px; bottom: 19px; left: 32px; height: 33px; border-top: 2px solid rgba(12,91,149,.55); border-bottom: 2px solid rgba(12,91,149,.35); content: ""; }
-    .carafe { position: absolute; z-index: 1; bottom: 56px; left: 50%; width: 139px; height: 106px; border: 6px solid var(--blue); border-radius: 16px 16px 45% 45%; background: rgba(117,198,232,.23); transform: translateX(-50%); }
-    .carafe::before { position: absolute; top: -28px; left: 29px; width: 70px; height: 28px; border: 6px solid var(--blue); border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; }
-    .brew-caption { position: absolute; right: 24px; bottom: 19px; color: var(--blue); text-align: right; }
-    .brew-caption span { display: block; font: 700 11px/1.5 "Playfair Display", serif; letter-spacing: .12em; }
-    .brew-caption strong { font: 700 24px/1.1 "Playfair Display", serif; }
-    .brew-copy > p { margin: 18px 0 25px; color: var(--muted); }
-    .brew-steps { border-top: 1px solid var(--line); }
-    .brew-step { display: grid; grid-template-columns: 52px 1fr; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .step-number { color: var(--blue); font: 700 24px/1 "Playfair Display", serif; }
-    .brew-step h3 { margin: 0; font: 700 16px/1.5 "Noto Serif TC", serif; }
-    .brew-step p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
-
-    /* Subscribe and footer */
-    .visit { position: relative; overflow: hidden; padding: 108px 0 113px; color: #fff; text-align: center; background: var(--navy); }
-    .visit::before, .visit::after { position: absolute; width: 390px; height: 390px; border: 1px solid rgba(117,198,232,.17); border-radius: 50%; content: ""; }
-    .visit::before { top: -245px; left: -153px; box-shadow: 0 0 0 45px rgba(117,198,232,.035); }
-    .visit::after { right: -170px; bottom: -260px; box-shadow: 0 0 0 50px rgba(117,198,232,.035); }
-    .visit .wrap { position: relative; z-index: 1; max-width: 715px; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit h2 { margin: 0; font: 800 clamp(30px, 4vw, 46px)/1.3 "Noto Serif TC", serif; letter-spacing: .045em; }
-    .visit p { max-width: 510px; margin: 19px auto 29px; color: rgba(255,255,255,.72); }
-    .subscribe-form { display: flex; min-height: 58px; border: 1px solid rgba(255,255,255,.62); }
-    .subscribe-form input { min-width: 0; flex: 1; padding: 0 18px; border: 0; color: #fff; outline: none; background: transparent; }
-    .subscribe-form input::placeholder { color: rgba(255,255,255,.56); }
-    .subscribe-form button { padding: 0 23px; border: 0; color: var(--navy); background: var(--sand); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background .2s; }
-    .subscribe-form button:hover { background: #f1cb8b; }
-    .site-footer { padding: 66px 0 23px; color: rgba(255,255,255,.68); background: #031c31; }
-    .footer-grid { display: grid; grid-template-columns: 1.45fr .8fr 1fr; gap: 55px; padding-bottom: 48px; }
-    .footer-brand .brand { margin-bottom: 16px; }
-    .footer-brand p { max-width: 330px; margin: 0; font-size: 14px; }
-    .footer-title { margin: 0 0 14px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
-    .footer-links { display: grid; gap: 8px; font-size: 14px; }
-    .footer-links a:hover { color: var(--sky); }
-    .footer-links address { font-style: normal; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.44); font: 600 10px/1.5 "Playfair Display", serif; letter-spacing: .1em; }
-
-    .toast { position: fixed; z-index: 50; right: 22px; bottom: 22px; max-width: min(370px, calc(100vw - 44px)); padding: 14px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); font-size: 14px; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 820px) {
-      .menu-toggle { display: grid; place-items: center; }
-      .nav { position: relative; }
-      .nav-links { position: absolute; top: 78px; right: -24px; left: -24px; max-height: 0; display: grid; gap: 0; overflow: hidden; background: #05233c; transition: max-height .35s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.16); }
-      .nav-links a { display: block; padding: 13px 24px; }
-      .nav-links .nav-cta { margin: 5px 24px 15px; padding: 10px 13px; text-align: center; }
-      .hero { min-height: 710px; }
-      .hero-grid { min-height: 710px; grid-template-columns: 1fr; gap: 0; padding: 118px 0 43px; }
-      .hero-art { min-height: 276px; margin-top: -9px; }
-      .hero-art .sun { top: 19px; right: 20%; width: 130px; }
-      .mountain { height: 180px; }
-      .mountain--back { bottom: 69px; height: 150px; }
-      .coffee-vessel { right: 17%; bottom: -12px; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { display: none; }
-      .scroll-cue { display: none; }
-      .story-grid, .brew-grid { grid-template-columns: 1fr; }
-      .story-visual { max-width: 525px; width: 100%; min-height: 400px; }
-      .coffee-grid { grid-template-columns: repeat(2, 1fr); }
-      .coffee-card:nth-child(3) { grid-column: span 2; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-orange {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--orange-bright), var(--orange-dark));
+      box-shadow: var(--shadow-orange);
     }
-    @media (max-width: 560px) {
-      .wrap { width: calc(100% - 34px); }
-      .nav-links { right: -17px; left: -17px; }
-      .hero { min-height: 680px; }
-      .hero-grid { min-height: 680px; padding-top: 106px; }
-      .hero h1 { font-size: 40px; }
-      .hero-lede { font-size: 14px; }
-      .hero-actions { gap: 9px; margin-top: 24px; }
-      .hero-actions .button, .hero-actions .outline-link { min-height: 46px; padding: 8px 15px; font-size: 13px; }
-      .hero-note { margin-top: 21px; }
-      .hero-art { min-height: 219px; }
-      .hero-art .sun { width: 92px; }
-      .coffee-vessel { right: 5%; bottom: -48px; transform: scale(.57); }
-      .story, .coffee, .brew { padding: 76px 0; }
-      .seal { width: 245px; height: 245px; }
-      .seal-inner b { font-size: 35px; }
-      .story-visual { min-height: 347px; }
-      .blue-note { width: 185px; padding: 20px; }
-      .blue-note p { font-size: 16px; }
-      .section-heading { display: block; margin-bottom: 28px; }
-      .section-heading p { margin-top: 14px; font-size: 14px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:nth-child(3) { min-height: 330px; grid-column: auto; }
-      .coffee-card { padding: 25px; }
-      .brew-art { height: 310px; }
-      .water-rings { top: 45px; width: 178px; height: 178px; box-shadow: 0 0 0 23px rgba(117,198,232,.12), 0 0 0 53px rgba(117,198,232,.065); }
-      .dripper { top: 95px; transform: translateX(-50%) scale(.75); }
-      .carafe { bottom: 37px; transform: translateX(-50%) scale(.75); }
-      .visit { padding: 76px 0; }
-      .subscribe-form { display: grid; gap: 0; border: 0; }
-      .subscribe-form input { min-height: 54px; border: 1px solid rgba(255,255,255,.62); }
-      .subscribe-form button { min-height: 54px; margin-top: 10px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 33px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: grid; gap: 8px; }
+    .btn-orange:hover {
+      background: linear-gradient(135deg, #FF8433, var(--orange));
+      box-shadow: 0 14px 34px rgba(255, 102, 0, 0.42);
     }
+    .btn-outline-white {
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(4px);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: var(--white);
+    }
+    .btn-outline-orange {
+      color: var(--orange-dark);
+      border: 1.5px solid var(--orange);
+      background: transparent;
+    }
+    .btn-outline-orange:hover {
+      color: var(--white);
+      background: var(--orange);
+    }
+    .btn-sm {
+      min-height: 38px;
+      padding: 8px 18px;
+      font-size: 13px;
+    }
+
+    /* Section Headings */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 52px;
+    }
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+    }
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: "";
+      width: 28px;
+      height: 1.5px;
+      background: var(--orange);
+      opacity: 0.7;
+    }
+    .section-title {
+      font-size: clamp(28px, 4.2vw, 42px);
+      font-weight: 900;
+      line-height: 1.32;
+      color: var(--text-main);
+      letter-spacing: 0.02em;
+    }
+    .section-title span.orange { color: var(--orange); }
+    .section-desc {
+      margin-top: 16px;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* Top Announcement Bar */
+    .top-promo-bar {
+      background: var(--orange);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .top-promo-bar a {
+      text-decoration: underline;
+      margin-left: 8px;
+      color: #FFF2E6;
+    }
+    .top-promo-bar a:hover { color: #FFF; }
+
+    /* Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 13, 10, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 102, 0, 0.2);
+      transition: var(--transition);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+    }
+    .brand-logo-badge {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--orange-bright), var(--orange-dark));
+      box-shadow: 0 4px 16px rgba(255, 102, 0, 0.4);
+      color: var(--white);
+      font-weight: 900;
+      font-size: 20px;
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.05em;
+    }
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name-zh {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1.15;
+      color: var(--white);
+    }
+    .brand-name-en {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--orange);
+      font-family: "Cinzel", sans-serif;
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-item {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
+      padding: 6px 0;
+      white-space: nowrap;
+    }
+    .nav-item:hover { color: var(--orange-bright); }
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s ease;
+    }
+    .nav-item:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cart-trigger {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: var(--transition);
+    }
+    .cart-trigger:hover {
+      background: rgba(255, 102, 0, 0.2);
+      border-color: var(--orange);
+    }
+    .cart-count {
+      display: inline-grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .mobile-toggle {
+      display: none;
+      color: var(--white);
+      font-size: 24px;
+      padding: 6px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at 82% 28%, #2D1D13 0%, var(--dark-espresso) 70%);
+      color: var(--white);
+      overflow: hidden;
+      padding: 92px 0 108px;
+      border-bottom: 3px solid var(--orange);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 102, 0, 0.18) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 56px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-size: clamp(34px, 4.8vw, 56px);
+      font-weight: 900;
+      line-height: 1.24;
+      letter-spacing: 0.03em;
+      margin-bottom: 24px;
+    }
+    .hero-title .highlight {
+      color: var(--orange);
+      text-shadow: 0 0 24px rgba(255, 102, 0, 0.35);
+    }
+    .hero-subtitle {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.85;
+      margin-bottom: 36px;
+      max-width: 580px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--orange-bright);
+      font-family: "Cinzel", serif;
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-light-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* Hero Visual Graphic (Hand-Pour Illustration) */
+    .hero-visual {
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .pour-stage {
+      position: relative;
+      width: 380px;
+      height: 440px;
+      background: linear-gradient(160deg, #241A13, #150F0B);
+      border: 1px solid rgba(255, 102, 0, 0.3);
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 102, 0, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .pour-stage::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange), var(--gold), var(--orange));
+    }
+    .coffee-steam {
+      width: 80px;
+      height: 30px;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+    .steam-line {
+      width: 3px;
+      height: 24px;
+      background: linear-gradient(to top, rgba(255, 102, 0, 0.8), transparent);
+      border-radius: 3px;
+      animation: steamPulse 2.4s infinite ease-in-out;
+    }
+    .steam-line:nth-child(2) { animation-delay: 0.6s; height: 32px; }
+    .steam-line:nth-child(3) { animation-delay: 1.2s; }
+    @keyframes steamPulse {
+      0%, 100% { transform: translateY(0) scaleY(0.7); opacity: 0.3; }
+      50% { transform: translateY(-8px) scaleY(1.1); opacity: 0.85; }
+    }
+
+    .v60-dripper-art {
+      width: 170px;
+      height: 98px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 230, 218, 0.85));
+      clip-path: polygon(0 0, 100% 0, 72% 100%, 28% 100%);
+      position: relative;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      border-top: 4px solid var(--orange);
+    }
+    .v60-dripper-art::after {
+      content: "";
+      position: absolute;
+      inset: 12px 18px 0;
+      background: #462A19;
+      clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%);
+    }
+    .drip-stream {
+      width: 4px;
+      height: 38px;
+      background: linear-gradient(to bottom, #7A421D, var(--orange));
+      margin: 2px auto;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(255, 102, 0, 0.8);
+      animation: dripPulse 1.8s infinite;
+    }
+    @keyframes dripPulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .carafe-art {
+      width: 180px;
+      height: 140px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px 12px 42px 42px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .carafe-art::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 35px;
+      width: 104px;
+      height: 14px;
+      border: 3px solid rgba(255, 255, 255, 0.35);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+    }
+    .coffee-liquid {
+      width: 100%;
+      height: 72px;
+      background: linear-gradient(180deg, #9C4E19 0%, #4E250A 100%);
+      border-top: 2px solid var(--orange);
+      position: relative;
+    }
+    .floating-param-tag {
+      position: absolute;
+      background: rgba(18, 13, 10, 0.92);
+      border: 1px solid var(--orange);
+      border-radius: 8px;
+      padding: 8px 14px;
+      box-shadow: var(--shadow-md);
+      color: var(--white);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: floatTag 4s ease-in-out infinite;
+    }
+    .tag-temp { top: 32px; left: -18px; }
+    .tag-ratio { bottom: 60px; right: -24px; animation-delay: 2s; }
+    .floating-param-tag strong { color: var(--orange-bright); font-size: 15px; font-family: "Cinzel", serif; }
+    @keyframes floatTag {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* Section: Pillars of High-End Specialty Beans */
+    .section-pillars {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .pillar-card {
+      background: var(--cream);
+      border: 1px solid rgba(255, 102, 0, 0.15);
+      border-radius: 12px;
+      padding: 40px 32px;
+      position: relative;
+      transition: var(--transition);
+      overflow: hidden;
+    }
+    .pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--orange);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(255, 102, 0, 0.4);
+      background: var(--white);
+    }
+    .pillar-card:hover::before { transform: scaleY(1); transform-origin: top; }
+    .pillar-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      background: var(--orange-mist);
+      border: 1px solid rgba(255, 102, 0, 0.25);
+      color: var(--orange);
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
+    .pillar-number {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-size: 32px;
+      font-weight: 800;
+      color: rgba(255, 102, 0, 0.16);
+      font-family: "Cinzel", serif;
+    }
+    .pillar-title {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+    .pillar-desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* Section: Seasonal Specialty Beans */
+    .section-beans {
+      padding: 108px 0;
+      background: var(--cream-warm);
+      position: relative;
+    }
+    .bean-filter-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+    .filter-btn {
+      padding: 9px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      color: var(--white);
+      background: var(--orange);
+      border-color: var(--orange);
+      box-shadow: 0 4px 14px rgba(255, 102, 0, 0.28);
+    }
+
+    .bean-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .bean-card {
+      background: var(--white);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 102, 0, 0.14);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+    .bean-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--orange);
+    }
+    .bean-ribbon {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 2;
+    }
+    .bean-header {
+      background: linear-gradient(135deg, #241A13, #150F0A);
+      color: var(--white);
+      padding: 28px 24px 22px;
+      position: relative;
+    }
+    .bean-origin {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      font-family: "Cinzel", serif;
+      margin-bottom: 6px;
+    }
+    .bean-name {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.35;
+      color: var(--white);
+    }
+    .bean-process-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: rgba(255, 102, 0, 0.22);
+      border: 1px solid rgba(255, 102, 0, 0.45);
+      color: #FFB380;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .bean-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .flavor-notes-box {
+      margin-bottom: 20px;
+    }
+    .flavor-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .flavor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .flavor-pill {
+      font-size: 12px;
+      padding: 4px 10px;
+      background: var(--orange-mist);
+      color: var(--orange-dark);
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .bean-specs-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 1px dashed rgba(0, 0, 0, 0.1);
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    .spec-item span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+    .spec-item strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    .bean-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .bean-price-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .bean-price-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .bean-price {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--orange);
+      font-family: "Cinzel", serif;
+      line-height: 1.1;
+    }
+    .bean-price small {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: "Noto Sans TC", sans-serif;
+      font-weight: 500;
+    }
+
+    /* Section: Pour-over Ritual & Brewing Guide */
+    .section-ritual {
+      padding: 108px 0;
+      background: var(--dark-espresso);
+      color: var(--white);
+      position: relative;
+    }
+    .ritual-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: center;
+      gap: 60px;
+    }
+    .ritual-card-display {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .ritual-card-display h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .parameter-gauges {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .gauge-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 102, 0, 0.2);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .gauge-label {
+      font-size: 12px;
+      color: var(--text-light-muted);
+      letter-spacing: 0.05em;
+    }
+    .gauge-val {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--orange-bright);
+      font-family: "Cinzel", serif;
+      margin-top: 4px;
+    }
+    .gauge-desc {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 4px;
+    }
+    .ritual-quote {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.72);
+      border-left: 3px solid var(--orange);
+      padding-left: 16px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .brew-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .timeline-step {
+      display: flex;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      padding: 20px;
+      transition: var(--transition);
+    }
+    .timeline-step:hover {
+      background: rgba(255, 102, 0, 0.08);
+      border-color: rgba(255, 102, 0, 0.35);
+    }
+    .step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      font-weight: 800;
+      font-family: "Cinzel", serif;
+      flex-shrink: 0;
+    }
+    .step-detail h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .step-detail p {
+      font-size: 14px;
+      color: var(--text-light-muted);
+      line-height: 1.7;
+    }
+
+    /* Section: Promotion Voucher & Black Card Benefits */
+    .section-promo {
+      padding: 96px 0;
+      background: linear-gradient(135deg, #FFF7F0, #FFF);
+      border-top: 1px solid rgba(255, 102, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 102, 0, 0.15);
+    }
+    .promo-banner {
+      background: linear-gradient(135deg, #1C140E 0%, #2A1A10 100%);
+      border-radius: 20px;
+      padding: 60px 48px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(28, 20, 14, 0.25);
+      border: 1px solid rgba(255, 102, 0, 0.3);
+    }
+    .promo-banner::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 102, 0, 0.28), transparent 70%);
+    }
+    .promo-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+    .promo-text h3 {
+      font-size: clamp(26px, 3.6vw, 38px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .promo-text p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .coupon-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px dashed var(--orange);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .coupon-val {
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--orange-bright);
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.05em;
+      transition: transform 0.25s ease;
+    }
+    .coupon-desc {
+      font-size: 13px;
+      color: var(--gold-light);
+      margin: 6px 0 16px;
+    }
+
+    /* Section: Bar Experience & Store Locator */
+    .section-stores {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .store-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .store-feature-card {
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 32px 24px;
+      background: var(--cream);
+      text-align: center;
+      transition: var(--transition);
+    }
+    .store-feature-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-sm);
+    }
+    .store-feature-icon {
+      font-size: 32px;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .store-feature-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .store-feature-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Newsletter & Tasting Club */
+    .section-newsletter {
+      padding: 96px 0;
+      background: var(--dark-bean);
+      color: var(--white);
+      text-align: center;
+      position: relative;
+    }
+    .newsletter-box {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .newsletter-input {
+      flex: 1;
+      min-height: 52px;
+      padding: 0 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      color: var(--white);
+      font-size: 15px;
+      outline: none;
+      transition: var(--transition);
+    }
+    .newsletter-input:focus {
+      border-color: var(--orange);
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 0 16px var(--orange-glow);
+    }
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--text-light-muted);
+      margin-top: 14px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--dark-espresso);
+      color: var(--text-light-muted);
+      border-top: 1px solid rgba(255, 102, 0, 0.2);
+      font-size: 14px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      padding: 80px 0 50px;
+    }
+    .footer-brand p {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 320px;
+    }
+    .footer-col-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange-bright);
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .footer-links li + li { margin-top: 12px; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Modal & Cart Drawer */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-overlay.active { opacity: 1; pointer-events: auto; }
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(420px, 100%);
+      background: var(--cream);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-drawer.active { transform: translateX(0); }
+    .drawer-header {
+      padding: 24px;
+      background: var(--dark-bean);
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .drawer-header h3 { font-size: 18px; font-weight: 800; }
+    .drawer-close { color: var(--white); font-size: 24px; }
+    .drawer-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .cart-item-info h5 { font-size: 15px; font-weight: 700; }
+    .cart-item-info p { font-size: 12px; color: var(--text-muted); }
+    .cart-item-price { font-weight: 800; color: var(--orange); }
+    .drawer-footer {
+      padding: 24px;
+      background: var(--white);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .drawer-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    /* Toast Notification */
+    .toast-box {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1100;
+      background: var(--dark-bean);
+      border-left: 4px solid var(--orange);
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: 6px;
+      box-shadow: var(--shadow-md);
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    .toast-box.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+    /* Scroll Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-      .reveal { opacity: 1; transform: none; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .ritual-grid, .promo-grid { grid-template-columns: 1fr; gap: 48px; }
+      .pillars-grid, .bean-grid, .store-features-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .hero-visual { order: -1; }
+      .pour-stage { width: 100%; max-width: 360px; height: 380px; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    }
+
+    @media (max-width: 768px) {
+      .top-promo-bar { font-size: 12px; }
+      .nav-menu {
+        position: fixed;
+        top: 74px;
+        left: 0;
+        right: 0;
+        background: var(--dark-bean);
+        flex-direction: column;
+        padding: 30px 24px;
+        gap: 20px;
+        border-bottom: 2px solid var(--orange);
+        transform: translateY(-130%);
+        transition: transform 0.3s ease;
+      }
+      .nav-menu.open { transform: translateY(0); }
+      .mobile-toggle { display: block; }
+      .hero { padding: 60px 0 80px; }
+      .hero-stats { grid-template-columns: 1fr; gap: 16px; }
+      .pillars-grid, .bean-grid, .store-features-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-promo-bar" role="region" aria-label="優惠公告">
+    🎉【尋豆師黑卡限定】全館手沖精品莊園豆單品享首購 <strong>85折</strong> 優惠！
+    <a href="#promo">領取優惠券 ➔</a>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
     <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span>
+      <a class="brand" href="#top" aria-label="路易莎咖啡首頁">
+        <div class="brand-logo-badge">L</div>
+        <div class="brand-name">
+          <span class="brand-name-zh">路易莎咖啡</span>
+          <span class="brand-name-en">LOUISA COFFEE</span>
+        </div>
       </a>
-      <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的故事</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+
+      <button class="mobile-toggle" id="menuToggle" aria-label="切換選單" aria-expanded="false">☰</button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a class="nav-item" href="#philosophy">尋豆堅持</a></li>
+        <li><a class="nav-item" href="#beans">精選精品豆</a></li>
+        <li><a class="nav-item" href="#ritual">手沖工藝指南</a></li>
+        <li><a class="nav-item" href="#stores">手沖吧台門市</a></li>
+        <li><a class="nav-item" href="#promo">黑卡專屬優惠</a></li>
+        <li><a class="nav-item" href="#beans">咖啡拿鐵</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-trigger" id="cartOpenBtn" aria-label="檢視品鑑選豆單">
+          <span>品鑑清單</span>
+          <span class="cart-count" id="cartBadgeCount">0</span>
+        </button>
+        <a class="btn btn-orange btn-sm" href="#beans">立即品鑑</a>
       </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="heroTitle">
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="heroHeading">
       <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 id="heroTitle">讓風味，在<span>藍天</span>下慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的您，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有屬於自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button--sand" href="#coffee">探索本季咖啡豆 →</a>
-            <a class="outline-link" href="#story">認識藍天</a>
+        <div class="hero-content reveal">
+          <div class="hero-badge-group">
+            <span class="badge badge-dark">✦ SPECIALTY POUR-OVER COFFEE</span>
+            <span class="badge badge-orange">職人金杯手沖</span>
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2025</p>
-          <span class="scroll-cue">SCROLL TO DISCOVER</span>
+
+          <h1 class="hero-title serif" id="heroHeading">
+            頂級莊園的純粹風土<br>
+            在每一滴<span class="highlight">手沖</span>中綻放。
+          </h1>
+
+          <p class="hero-subtitle">
+            路易莎專業尋豆師深入全球頂級莊園，嚴選微批次高階精品豆。以 92°C 恆溫純淨萃取、細膩層次，為真正講究手沖的你，喚醒每一顆豆子的靈魂香氣。
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-orange" href="#beans">
+              <span>探索莊園精品豆</span>
+              <span>➔</span>
+            </a>
+            <a class="btn btn-outline-white" href="#promo">
+              <span>領取手沖品鑑現折券</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">尋豆師直聘莊園</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">85+</div>
+              <div class="stat-label">SCA 精品杯測認證</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">92°C</div>
+              <div class="stat-label">金杯準則黃金萃取溫控</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">拿鐵</div>
+              <div class="stat-label">莊園手沖風味特調</div>
+            </div>
+          </div>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain mountain--back"></div>
-          <div class="mountain"></div>
-          <div class="horizon"></div>
-          <div class="coffee-vessel"><div class="vessel-neck"></div><div class="vessel-body"></div><div class="vessel-handle"></div></div>
-          <div class="art-label"><strong>92°C</strong><span>理想水溫</span><span>細細喚醒香氣</span></div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="pour-stage">
+            <div class="coffee-steam">
+              <div class="steam-line"></div>
+              <div class="steam-line"></div>
+              <div class="steam-line"></div>
+            </div>
+
+            <div class="v60-dripper-art"></div>
+            <div class="drip-stream"></div>
+            <div class="carafe-art">
+              <div class="coffee-liquid"></div>
+            </div>
+
+            <div class="floating-param-tag tag-temp">
+              <span>💧 萃取水溫</span>
+              <strong>92°C</strong>
+            </div>
+
+            <div class="floating-param-tag tag-ratio">
+              <span>⚖️ 黃金水粉比</span>
+              <strong>1 : 15</strong>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="story" id="story" aria-labelledby="storyTitle">
-      <div class="wrap story-grid">
-        <div class="story-visual reveal" aria-hidden="true">
-          <div class="seal"><div class="seal-inner"><b>B</b><span>慢一點，更清楚。</span><small>LET THE FLAVOUR SPEAK</small></div></div>
-          <aside class="blue-note"><p class="eyebrow">BLUE SKY NOTE</p><p>一杯好咖啡，從來不是匆忙完成的事。</p></aside>
-        </div>
-        <div class="story-copy reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，看見產地的<span class="text-blue">晴朗</span>。</h2>
-          <p>我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p>給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="inline-link" href="#brew">看看我們如何沖煮 <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="coffee" id="coffee" aria-labelledby="coffeeTitle">
+    <!-- Section: Pillars of High-End Coffee Beans -->
+    <section class="section-pillars" id="philosophy" aria-labelledby="pillarsHeading">
       <div class="wrap">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<span class="text-blue">藍天</span>？</h2></div>
-          <p>三款當季單品，為不同的晨光、午後與靜夜而選。</p>
+        <div class="section-header reveal">
+          <p class="section-eyebrow">HIGH-END COFFEE BEANS</p>
+          <h2 class="section-title serif" id="pillarsHeading">尋豆師的世界足跡，<br>只為一顆<span class="orange">極品莊園豆</span></h2>
+          <p class="section-desc">我們跨越赤道與高海拔微型氣候區，對每批生豆進行多重杯測檢驗，以匠人精神堅守手沖咖啡的極致標準。</p>
         </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="card-top">01 / BRIGHT</div><p class="origin">ETHIOPIA · YIRGACHEFFE</p><h3>衣索比亞・耶加雪菲</h3><p class="flavour">白花、佛手柑、蜂蜜</p>
-            <div class="card-footer"><span class="price">NT$ 520 / 200g</span><button class="save-coffee" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card reveal">
+            <div class="pillar-number">01</div>
+            <div class="pillar-icon-box">🌍</div>
+            <h3 class="pillar-title">全球莊園直購 Direct Trade</h3>
+            <p class="pillar-desc">走訪衣索比亞谷吉、巴拿馬波奎特等傳奇產區，親自挑選高海拔火山土壤培育的手採熟成紅果。</p>
           </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">02 / JUICY</div><p class="origin">KENYA · KIRINYAGA</p><h3>肯亞・祈安布</h3><p class="flavour">黑醋栗、洛神、葡萄柚</p>
-            <div class="card-footer"><span class="price">NT$ 580 / 200g</span><button class="save-coffee" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
+
+          <article class="pillar-card reveal">
+            <div class="pillar-number">02</div>
+            <div class="pillar-icon-box">🔥</div>
+            <h3 class="pillar-title">量身烘焙 Artisan Roasting</h3>
+            <p class="pillar-desc">引進精密電腦控溫烘豆機，精準捕捉梅納反應高峰，完整保留單一產區花果酸香與柔順回甘。</p>
           </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">03 / ROUND</div><p class="origin">COLOMBIA · HUILA</p><h3>哥倫比亞・慧蘭</h3><p class="flavour">黃桃、焦糖、可可尾韻</p>
-            <div class="card-footer"><span class="price">NT$ 460 / 200g</span><button class="save-coffee" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
+
+          <article class="pillar-card reveal">
+            <div class="pillar-number">03</div>
+            <div class="pillar-icon-box">☕</div>
+            <h3 class="pillar-title">金杯手沖 Golden Cup</h3>
+            <p class="pillar-desc">門市手沖吧台配備專業溫控細口壺與頂級磨豆機，精準計算 30 秒點滴悶蒸與二段注水曲線。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="wrap brew-grid">
-        <div class="brew-art reveal" aria-hidden="true"><div class="water-rings"></div><div class="dripper"></div><div class="carafe"></div><div class="brew-caption"><span>V60 / 15G : 240ML</span><strong>2'45''</strong></div></div>
-        <div class="brew-copy reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，讓咖啡說<span class="text-blue">自己的話</span>。</h2>
-          <p>不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <div class="brew-steps">
-            <div class="brew-step"><span class="step-number">01</span><div><h3>研磨，先聞見期待</h3><p>15g 中細研磨，讓香氣從指尖開始展開。</p></div></div>
-            <div class="brew-step"><span class="step-number">02</span><div><h3>悶蒸，等待第一個呼吸</h3><p>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</p></div></div>
-            <div class="brew-step"><span class="step-number">03</span><div><h3>注水，保持自己的節奏</h3><p>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</p></div></div>
+    <!-- Section: Seasonal Selection -->
+    <section class="section-beans" id="beans" aria-labelledby="beansHeading">
+      <div class="wrap">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">SPECIALTY BEAN SELECTION</p>
+          <h2 class="section-title serif" id="beansHeading">本季莊園級<span class="orange">手沖精品豆</span>推薦</h2>
+          <p class="section-desc">手沖愛好者的專屬風味盛宴。線上訂購新鮮即烘，亦可於全台門市手沖吧台現場細品。</p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="bean-filter-nav reveal" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">全部推薦</button>
+          <button class="filter-btn" data-filter="light" role="tab" aria-selected="false">淺焙花果香</button>
+          <button class="filter-btn" data-filter="medium" role="tab" aria-selected="false">中焙堅果甜感</button>
+          <button class="filter-btn" data-filter="geisha" role="tab" aria-selected="false">極品藝伎瑰夏</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="bean-grid" id="beanGrid">
+          <!-- Bean 1 -->
+          <article class="bean-card reveal" data-category="geisha">
+            <div class="bean-ribbon"><span class="badge badge-dark">頂級瑰夏</span></div>
+            <div class="bean-header">
+              <div class="bean-origin">PANAMA · BOQUETE</div>
+              <h3 class="bean-name serif">巴拿馬 翡翠莊園 藝伎</h3>
+              <span class="bean-process-tag">特等水洗 · 極淺焙</span>
+            </div>
+            <div class="bean-body">
+              <div class="flavor-notes-box">
+                <div class="flavor-title">杯測風味輪</div>
+                <div class="flavor-tags">
+                  <span class="flavor-pill">茉莉花香</span>
+                  <span class="flavor-pill">白桃</span>
+                  <span class="flavor-pill">佛手柑伯爵茶感</span>
+                </div>
+              </div>
+              <div class="bean-specs-list">
+                <div class="spec-item"><span>海拔</span><strong>1,750m</strong></div>
+                <div class="spec-item"><span>酸質調性</span><strong>明亮細緻</strong></div>
+                <div class="spec-item"><span>處理法</span><strong>特選水洗</strong></div>
+                <div class="spec-item"><span>烘焙度</span><strong>Light 極淺焙</strong></div>
+              </div>
+              <div class="bean-footer">
+                <div class="bean-price-box">
+                  <span class="bean-price-label">200g 熟豆</span>
+                  <span class="bean-price">NT$ 980 <small>/ 包</small></span>
+                </div>
+                <button class="btn btn-orange btn-sm add-cart-btn" data-name="巴拿馬 翡翠莊園 藝伎" data-price="980">加入品鑑 ＋</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bean 2 -->
+          <article class="bean-card reveal" data-category="light">
+            <div class="bean-ribbon"><span class="badge badge-orange">人氣冠軍</span></div>
+            <div class="bean-header">
+              <div class="bean-origin">ETHIOPIA · GUJI HAMBELLA</div>
+              <h3 class="bean-name serif">衣索比亞 罕貝拉 莊園</h3>
+              <span class="bean-process-tag">慢速日曬 · 淺中焙</span>
+            </div>
+            <div class="bean-body">
+              <div class="flavor-notes-box">
+                <div class="flavor-title">杯測風味輪</div>
+                <div class="flavor-tags">
+                  <span class="flavor-pill">成熟草莓</span>
+                  <span class="flavor-pill">百香果</span>
+                  <span class="flavor-pill">龍眼花蜜甜感</span>
+                </div>
+              </div>
+              <div class="bean-specs-list">
+                <div class="spec-item"><span>海拔</span><strong>2,100m</strong></div>
+                <div class="spec-item"><span>酸質調性</span><strong>熱帶水果多汁</strong></div>
+                <div class="spec-item"><span>處理法</span><strong>非洲棚架日曬</strong></div>
+                <div class="spec-item"><span>烘焙度</span><strong>Medium-Light</strong></div>
+              </div>
+              <div class="bean-footer">
+                <div class="bean-price-box">
+                  <span class="bean-price-label">200g 熟豆</span>
+                  <span class="bean-price">NT$ 520 <small>/ 包</small></span>
+                </div>
+                <button class="btn btn-orange btn-sm add-cart-btn" data-name="衣索比亞 罕貝拉 莊園" data-price="520">加入品鑑 ＋</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bean 3 -->
+          <article class="bean-card reveal" data-category="medium">
+            <div class="bean-ribbon"><span class="badge badge-dark">經典回甘</span></div>
+            <div class="bean-header">
+              <div class="bean-origin">COLOMBIA · HUILA SUPREMO</div>
+              <h3 class="bean-name serif">哥倫比亞 薇拉 精選莊園</h3>
+              <span class="bean-process-tag">雙重厭氧發酵 · 中焙</span>
+            </div>
+            <div class="bean-body">
+              <div class="flavor-notes-box">
+                <div class="flavor-title">杯測風味輪</div>
+                <div class="flavor-tags">
+                  <span class="flavor-pill">烤堅果</span>
+                  <span class="flavor-pill">焦糖布丁</span>
+                  <span class="flavor-pill">黑巧克力尾韻</span>
+                </div>
+              </div>
+              <div class="bean-specs-list">
+                <div class="spec-item"><span>海拔</span><strong>1,850m</strong></div>
+                <div class="spec-item"><span>酸質調性</span><strong>溫潤厚實</strong></div>
+                <div class="spec-item"><span>處理法</span><strong>厭氧水洗</strong></div>
+                <div class="spec-item"><span>烘焙度</span><strong>Medium 中焙</strong></div>
+              </div>
+              <div class="bean-footer">
+                <div class="bean-price-box">
+                  <span class="bean-price-label">200g 熟豆</span>
+                  <span class="bean-price">NT$ 460 <small>/ 包</small></span>
+                </div>
+                <button class="btn btn-orange btn-sm add-cart-btn" data-name="哥倫比亞 薇拉 精選莊園" data-price="460">加入品鑑 ＋</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Hand-Pour Ritual & Brewing Guide -->
+    <section class="section-ritual" id="ritual" aria-labelledby="ritualHeading">
+      <div class="wrap ritual-grid">
+        <div class="ritual-card-display reveal">
+          <p class="section-eyebrow" style="color: var(--orange-bright);">MASTER BREW RECIPE</p>
+          <h3 class="serif" id="ritualHeading">路易莎職人手沖黃金參數</h3>
+          <p style="color: var(--text-light-muted); font-size: 14px; margin-bottom: 24px;">
+            為了完美萃取每一款精品豆的芳香分子，建議採用以下路易莎手沖吧台標準設定：
+          </p>
+
+          <div class="parameter-gauges">
+            <div class="gauge-box">
+              <div class="gauge-label">咖啡粉量 / 研磨度</div>
+              <div class="gauge-val">15g</div>
+              <div class="gauge-desc">小富士 3.5 刻度 (中細研磨)</div>
+            </div>
+            <div class="gauge-box">
+              <div class="gauge-label">熱水溫度</div>
+              <div class="gauge-val">91 - 93°C</div>
+              <div class="gauge-desc">保留花果酸質，杜絕苦澀</div>
+            </div>
+            <div class="gauge-box">
+              <div class="gauge-label">注水總重</div>
+              <div class="gauge-val">225 ml</div>
+              <div class="gauge-desc">1 : 15 濃淡相宜黃金粉水比</div>
+            </div>
+            <div class="gauge-box">
+              <div class="gauge-label">萃取總時間</div>
+              <div class="gauge-val">2' 20''</div>
+              <div class="gauge-desc">點滴浸潤 + 二段注水</div>
+            </div>
+          </div>
+
+          <div class="ritual-quote">
+            「手沖是一場與水和豆子的對話。當熱水接觸咖啡粉的剎那，綻開的氣泡正是產地陽光與微風的呼吸。」
+          </div>
+        </div>
+
+        <div class="brew-timeline reveal">
+          <div class="timeline-step">
+            <div class="step-badge">1</div>
+            <div class="step-detail">
+              <h4>溫壺與預浸濕 (Pre-Wet)</h4>
+              <p>以熱水浸潤濾紙，去除紙漿雜味並預熱下壺。倒掉洗紙水後倒入 15g 研磨好的精品咖啡粉輕拍整平。</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-badge">2</div>
+            <div class="step-detail">
+              <h4>黃金悶蒸 30 秒 (Bloom)</h4>
+              <p>由中心向外柔和注入 30ml 92°C 熱水，均勻潤濕咖啡粉。屏息靜候膨脹排氣，全面喚醒產地芳香酵素。</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-badge">3</div>
+            <div class="step-detail">
+              <h4>二段穩定繞圈萃取 (Pulse Pouring)</h4>
+              <p>第一段注水至 140ml 萃取醇厚酸香，稍降水流後第二段注至 225ml，在 2 分 20 秒時移除濾杯，搖勻品嚐三段溫層變化。</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
+    <!-- Section: Conversion Incentive & Coupon Claim -->
+    <section class="section-promo" id="promo" aria-labelledby="promoHeading">
+      <div class="wrap">
+        <div class="promo-banner reveal">
+          <div class="promo-grid">
+            <div class="promo-text">
+              <span class="badge badge-orange" style="margin-bottom: 16px;">✦ 黑卡會員尊享禮遇</span>
+              <h3 class="serif" id="promoHeading">新加入路易莎黑卡<br>首單手沖精品豆 <span style="color: var(--orange-bright);">現折 85 折</span>！</h3>
+              <p>
+                登入或綁定路易莎官方黑卡會員，即刻獲取手沖豆首購折扣碼，門市外帶或全站免運送到家。滿額再贈「尋豆師莊園濾掛體驗包 3 入組」。
+              </p>
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <button class="btn btn-orange" id="claimCouponBtn">一鍵領取 85 折折扣碼</button>
+                <a class="btn btn-outline-white" href="#beans">選購精品豆</a>
+              </div>
+            </div>
+
+            <div class="coupon-box">
+              <div style="font-size: 13px; letter-spacing: 0.15em; color: var(--gold-light);">LOUISA VIP VOUCHER</div>
+              <div class="coupon-val" id="couponCode">SPECIALTY85</div>
+              <div class="coupon-desc">結帳輸入代碼立減 15% ｜ 全品項莊園豆適用</div>
+              <button class="btn btn-outline-white btn-sm" id="copyCouponBtn">點擊複製代碼</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Hand-Pour Bar Experience & Store Locator -->
+    <section class="section-stores" id="stores" aria-labelledby="storesHeading">
+      <div class="wrap">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">BARISTA BAR EXPERIENCE</p>
+          <h2 class="section-title serif" id="storesHeading">全台門市<span class="orange">手沖精品吧台</span></h2>
+          <p class="section-desc">在專業手沖吧台前，由認證職人為您面對面現磨沖煮，感受前中後調的風味流動。</p>
+        </div>
+
+        <div class="store-features-grid">
+          <div class="store-feature-card reveal">
+            <div class="store-feature-icon">🌿</div>
+            <h4 class="store-feature-title">每日產區選豆試聞</h4>
+            <p class="store-feature-text">手沖吧台提供當季 6~8 款頂級莊園單品豆聞香瓶，先聞其香，再決定今日想遇見的產地風貌。</p>
+          </div>
+
+          <div class="store-feature-card reveal">
+            <div class="store-feature-icon">✨</div>
+            <h4 class="store-feature-title">客製化沖煮曲線</h4>
+            <p class="store-feature-text">可依個人喜好與咖啡師溝通研磨粗細、水溫微調，客製您最習慣的酸感亮彩或溫厚回甘。</p>
+          </div>
+
+          <div class="store-feature-card reveal">
+            <div class="store-feature-icon">🎫</div>
+            <h4 class="store-feature-title">咖啡師週週杯測分享</h4>
+            <p class="store-feature-text">指定旗艦門市每週六舉辦微型杯測會，黑卡會員可免費報名體驗專業 SCA 杯測標準與辨豆技巧。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Newsletter & Tasting Club -->
+    <section class="section-newsletter" aria-labelledby="newsletterHeading">
       <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 id="visitTitle">把下一杯好咖啡，寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe-form" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="your@email.com" required>
-          <button type="submit">訂閱風味通信</button>
-        </form>
+        <div class="newsletter-box">
+          <span class="badge badge-orange" style="margin-bottom: 14px;">BECOME AN INSIDER</span>
+          <h2 class="section-title serif" id="newsletterHeading" style="color: var(--white); font-size: 32px;">
+            訂閱路易莎<span class="orange">尋豆通信</span>
+          </h2>
+          <p style="color: var(--text-light-muted); margin-top: 12px; font-size: 15px;">
+            每月一封尋豆日誌，分享第一手微批次新豆到港情報、獨家手沖配方指南與限時會員快閃活動。
+          </p>
+
+          <form class="newsletter-form" id="newsletterForm">
+            <input class="newsletter-input" type="email" placeholder="請輸入您的電子信箱 Email" required aria-label="電子郵件">
+            <button class="btn btn-orange" type="submit">免費訂閱</button>
+          </form>
+          <div class="newsletter-note">我們尊重您的隱私，不會寄送垃圾郵件，可隨時取消訂閱。</div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下 一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-title">網站主題</p><div class="footer-links"><a href="#story">我們的故事</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div></div>
-      <div><p class="footer-title">聯絡我們</p><div class="footer-links"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><address>台中市西屯區僑光路 100 號</address><span>每日 10:00 — 19:00</span></div></div>
+    <div class="wrap footer-top">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-logo-badge">L</div>
+          <div class="brand-name">
+            <span class="brand-name-zh">路易莎咖啡</span>
+            <span class="brand-name-en">LOUISA COFFEE</span>
+          </div>
+        </div>
+        <p>
+          路易莎咖啡專注於精品手沖咖啡的探索與推廣。每一顆高階咖啡豆，都凝聚著產地風土與職人匠心，讓高品質的手沖生活成為日常美好。
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">精品探索</div>
+        <ul class="footer-links">
+          <li><a href="#beans">本季莊園豆單</a></li>
+          <li><a href="#ritual">手沖參數指南</a></li>
+          <li><a href="#philosophy">尋豆師莊園直購</a></li>
+          <li><a href="#promo">黑卡優惠專區</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">門市與服務</div>
+        <ul class="footer-links">
+          <li><a href="#stores">手沖旗艦吧台門市</a></li>
+          <li><a href="#stores">微型杯測會報名</a></li>
+          <li><a href="#header">黑卡會員制度說明</a></li>
+          <li><a href="#top">線上即烘專送服務</a></li>
+          <li><a href="#stores">外送平台服務</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">聯絡我們</div>
+        <ul class="footer-links">
+          <li>客服專線：0800-888-000</li>
+          <li>客服信箱：service@louisacoffee.com.tw</li>
+          <li>服務時間：週一至週五 09:00 - 18:00</li>
+          <li>品牌總部：台北市信義區忠孝東路五段</li>
+        </ul>
+      </div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2025 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
+
+    <div class="wrap footer-bottom">
+      <div>© 2026 路易莎咖啡股份有限公司 LOUISA COFFEE CO., LTD. 版權所有</div>
+      <div>DRIP WITH PASSION · SAVOR THE ORIGIN</div>
+    </div>
   </footer>
-  <div class="toast" role="status" aria-live="polite"></div>
 
+  <!-- Cart / Tasting List Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="品鑑清單">
+    <div class="drawer-header">
+      <h3>我的品鑑清單</h3>
+      <button class="drawer-close" id="cartCloseBtn" aria-label="關閉清單">✕</button>
+    </div>
+    <div class="drawer-body" id="cartItemsList">
+      <p style="color: var(--text-muted); text-align: center; margin-top: 40px;">目前品鑑清單是空的，歡迎加入喜歡的莊園豆！</p>
+    </div>
+    <div class="drawer-footer">
+      <div class="drawer-total">
+        <span>預估總計</span>
+        <span class="orange" id="cartTotalPrice" style="color: var(--orange);">NT$ 0</span>
+      </div>
+      <button class="btn btn-orange" style="width: 100%;" id="checkoutBtn">前往預約門市品鑑 / 結帳</button>
+    </div>
+  </aside>
+
+  <!-- Interactive Toast -->
+  <div class="toast-box" id="toastBox" role="status" aria-live="polite">已將商品加入品鑑清單！</div>
+
+  <!-- JavaScript -->
   <script>
-    (() => {
-      const menuButton = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const toast = document.querySelector('.toast');
-      let toastTimer;
-
-      const closeMenu = () => {
-        navLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', '開啟導覽選單');
-        menuButton.textContent = '☰';
-      };
-      menuButton.addEventListener('click', () => {
-        const opening = !navLinks.classList.contains('open');
-        navLinks.classList.toggle('open', opening);
-        menuButton.setAttribute('aria-expanded', String(opening));
-        menuButton.setAttribute('aria-label', opening ? '關閉導覽選單' : '開啟導覽選單');
-        menuButton.textContent = opening ? '×' : '☰';
+    // Mobile navigation toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open);
+      menuToggle.textContent = open ? '✕' : '☰';
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
       });
-      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    });
 
-      const showToast = message => {
-        clearTimeout(toastTimer);
-        toast.textContent = message;
-        toast.classList.add('show');
-        toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-      };
-      document.querySelectorAll('[data-coffee]').forEach(button => {
-        button.addEventListener('click', () => showToast(`已將「${button.dataset.coffee}」加入你的收藏。`));
-      });
-      document.querySelector('#subscribeForm').addEventListener('submit', event => {
-        event.preventDefault();
-        event.currentTarget.reset();
-        showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
-      });
+    // Toast helper
+    const toast = document.getElementById('toastBox');
+    let toastTimeout;
+    function showToast(message) {
+      clearTimeout(toastTimeout);
+      toast.textContent = message;
+      toast.classList.add('show');
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
 
-      const revealItems = document.querySelectorAll('.reveal');
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!('IntersectionObserver' in window) || reducedMotion) {
-        revealItems.forEach(item => item.classList.add('visible'));
-      } else {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: .12 });
-        revealItems.forEach(item => observer.observe(item));
+    // Filter functionality for beans
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const beanCards = document.querySelectorAll('.bean-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const filter = btn.dataset.filter;
+
+        beanCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Shopping Cart / Tasting List Logic
+    const cart = [];
+    const cartBadgeCount = document.getElementById('cartBadgeCount');
+    const cartOpenBtn = document.getElementById('cartOpenBtn');
+    const cartCloseBtn = document.getElementById('cartCloseBtn');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const cartItemsList = document.getElementById('cartItemsList');
+    const cartTotalPrice = document.getElementById('cartTotalPrice');
+
+    function updateCartUI() {
+      cartBadgeCount.textContent = cart.length;
+      if (cart.length === 0) {
+        cartItemsList.innerHTML = '<p style="color: var(--text-muted); text-align: center; margin-top: 40px;">目前品鑑清單是空的，歡迎加入喜歡的莊園豆！</p>';
+        cartTotalPrice.textContent = 'NT$ 0';
+        return;
       }
-    })();
+
+      let total = 0;
+      cartItemsList.innerHTML = '';
+      cart.forEach((item, index) => {
+        total += item.price;
+        const itemEl = document.createElement('div');
+        itemEl.className = 'cart-item';
+        itemEl.innerHTML = `
+          <div class="cart-item-info">
+            <h5>${item.name}</h5>
+            <p>200g 熟豆 / 建議水溫 92°C</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="cart-item-price">NT$ ${item.price}</span>
+            <button style="color: #999; font-size: 16px;" onclick="removeFromCart(${index})" title="移除" aria-label="移除 ${item.name}">✕</button>
+          </div>
+        `;
+        cartItemsList.appendChild(itemEl);
+      });
+      cartTotalPrice.textContent = `NT$ ${total}`;
+    }
+
+    function addToCart(name, price) {
+      cart.push({ name, price: parseInt(price, 10) });
+      updateCartUI();
+      showToast(`已將「${name}」加入品鑑清單！`);
+    }
+
+    window.removeFromCart = function(index) {
+      const removed = cart.splice(index, 1);
+      updateCartUI();
+      if (removed.length > 0) {
+        showToast(`已移除「${removed[0].name}」`);
+      }
+    };
+
+    document.querySelectorAll('.add-cart-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        addToCart(btn.dataset.name, btn.dataset.price);
+      });
+    });
+
+    function toggleCart(open) {
+      cartDrawer.classList.toggle('active', open);
+      drawerOverlay.classList.toggle('active', open);
+    }
+
+    cartOpenBtn.addEventListener('click', () => toggleCart(true));
+    cartCloseBtn.addEventListener('click', () => toggleCart(false));
+    drawerOverlay.addEventListener('click', () => toggleCart(false));
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (cart.length === 0) {
+        showToast('品鑑清單還是空的，請先挑選咖啡豆！');
+        return;
+      }
+      showToast('🎉 正在導向路易莎黑卡線上結帳與門市品鑑預約系統...');
+      toggleCart(false);
+    });
+
+    // Coupon Claim & Copy
+    const couponCode = document.getElementById('couponCode');
+    const claimCouponBtn = document.getElementById('claimCouponBtn');
+    const copyCouponBtn = document.getElementById('copyCouponBtn');
+
+    claimCouponBtn.addEventListener('click', () => {
+      showToast('🎁 恭喜！已為您領取 85 折優惠券「SPECIALTY85」');
+      couponCode.style.transform = 'scale(1.1)';
+      setTimeout(() => couponCode.style.transform = 'none', 300);
+    });
+
+    copyCouponBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(couponCode.textContent).then(() => {
+        showToast('📋 已複製折扣代碼 SPECIALTY85 到剪貼簿！');
+      }).catch(() => {
+        showToast('代碼已產生：SPECIALTY85');
+      });
+    });
+
+    // Newsletter Submission
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.target.reset();
+      showToast('💌 感謝訂閱！首期「尋豆日誌」與迎賓折扣碼已發送至您的信箱。');
+    });
+
+    // Scroll Reveal Effect
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach(r => observer.observe(r));
+    } else {
+      reveals.forEach(r => r.classList.add('active'));
+    }
   </script>
 </body>
 </html>
