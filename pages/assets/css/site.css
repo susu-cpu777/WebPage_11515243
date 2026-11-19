@@ -11,3 +11,16 @@
 a:focus-visible,button:focus-visible{outline:2px solid var(--rust);outline-offset:4px}
 @media(max-width:760px){.feature-card:hover{transform:translateY(-2px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Extend the shared soft-glass treatment to every page. */
+.values-grid{gap:14px;border-top:0}
+.values-grid article,.values-grid article+article{padding:25px 24px 17px;background:rgba(255,255,255,.46);border:1px solid rgba(110,98,72,.13);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:0 9px 25px rgba(69,61,45,.05);transition:transform .25s ease,box-shadow .25s ease}
+.values-grid article:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(69,61,45,.1)}
+.page-hero-art{border:1px solid rgba(110,98,72,.12);box-shadow:0 14px 35px rgba(69,61,45,.07)}
+.contact-art{border:0;box-shadow:none}
+.about-quote{position:relative;isolation:isolate}
+.about-quote:before{content:"";position:absolute;z-index:-1;inset:35px 8%;border:1px solid rgba(102,112,79,.16);background:rgba(255,255,255,.24);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.contact-details{border-top:0;display:grid;gap:10px}
+.contact-row{padding:18px 20px;background:rgba(255,255,255,.46);border:1px solid rgba(110,98,72,.13);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:0 8px 22px rgba(69,61,45,.045)}
+.notice{border:1px solid rgba(102,112,79,.12)}
+@media(max-width:760px){.values-grid{gap:10px}.values-grid article,.values-grid article+article{padding:18px 20px}.values-grid article:hover{transform:none}.contact-row{padding:15px}}
