@@ -745,6 +745,35 @@ img, svg {
   line-height: 1.85;
 }
 
+/* About Page: exchange terms and secret visit flow */
+.about-exchange {
+  background: rgba(18, 12, 38, 0.32);
+  border-top: 1px solid var(--gold-border-subtle);
+  border-bottom: 1px solid var(--gold-border-subtle);
+}
+
+.about-exchange .principles-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-exchange .about-visit-heading {
+  margin: 52px 0 24px;
+  color: var(--gold-light);
+  font-family: var(--font-serif);
+  font-size: 26px;
+  text-align: center;
+}
+
+.about-exchange .about-visit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.about-exchange .about-visit-card {
+  height: 100%;
+}
+
 /* Environment Section */
 .env-grid {
   display: grid;
@@ -1040,6 +1069,10 @@ img, svg {
   .principles-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .about-exchange .about-visit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -1117,6 +1150,11 @@ img, svg {
   
   .features-grid,
   .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-exchange .principles-grid,
+  .about-exchange .about-visit-grid {
     grid-template-columns: 1fr;
   }
   
