@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldMini2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf0cd"/>
+      <stop offset="50%" stop-color="#dfb776"/>
+      <stop offset="100%" stop-color="#8e682e"/>
+    </linearGradient>
+    <radialGradient id="bottleGlow" cx="50%" cy="55%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#dfb776" stop-opacity="0.7"/>
+      <stop offset="80%" stop-color="#c79bff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#18112c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Cork -->
+  <rect x="28" y="10" width="8" height="6" rx="1.5" fill="#a47844" stroke="url(#goldMini2)" stroke-width="0.8"/>
+  <!-- Bottle Neck -->
+  <rect x="27" y="16" width="10" height="6" fill="#1e153b" stroke="url(#goldMini2)" stroke-width="1.2"/>
+  <!-- Bottle Body -->
+  <path d="M 23,22 C 16,25 14,35 14,48 C 14,56 22,60 32,60 C 42,60 50,56 50,48 C 50,35 48,25 41,22 Z"
+        fill="#18112c" stroke="url(#goldMini2)" stroke-width="2"/>
+  <!-- Inner Memory Light Glow -->
+  <ellipse cx="32" cy="45" rx="12" ry="10" fill="url(#bottleGlow)"/>
+  <circle cx="32" cy="44" r="2.5" fill="#fff"/>
+  <!-- Sparkles -->
+  <text x="10" y="24" fill="#dfb776" font-size="9">✦</text>
+  <text x="46" y="26" fill="#c79bff" font-size="9">✧</text>
+</svg>

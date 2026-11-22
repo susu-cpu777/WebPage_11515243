@@ -1,17 +1,206 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f0e6"><meta name="description" content="聯絡時光雜貨店。聯絡資訊待提供，確認後即可補上。">
-  <title>聯絡我們｜時光雜貨店</title><link rel="stylesheet" href="assets/css/site.css"><script src="assets/js/site.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="聯絡時光雜貨店｜提供深夜尋店指引與代價交換前的重要注意事項。店址、電話與通訊資訊待補中，歡迎靜候星光指引。">
+  <title>聯絡我們｜時光雜貨店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳至主要內容</a>
-  <header class="site-header"><div class="container header-inner"><a class="brand" href="index.html" aria-label="時光雜貨店首頁"><span class="brand-mark" aria-hidden="true">時</span><span>時光雜貨店<small>OBJECTS WITH STORIES</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">開啟選單</span></button><nav class="primary-nav" id="primary-nav" aria-label="主要導覽"><a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="contact.html" aria-current="page">聯絡我們</a></nav></div></header>
-  <main id="main">
-    <section class="page-hero container contact-hero"><p class="eyebrow">SAY HELLO</p><h1>有任何想說的，<br><em>歡迎留下心意。</em></h1><p class="lead">我們期待聽見你的想法。聯絡方式確認後，會在這裡與你相見。</p><div class="page-hero-art contact-art" aria-hidden="true"><div class="contact-orbit orbit-one"></div><div class="contact-orbit orbit-two"></div><span class="contact-note">A LITTLE<br>HELLO</span><span class="contact-star">✳</span></div></section>
-    <section class="section-pad container contact-layout"><div class="contact-intro"><p class="eyebrow">GET IN TOUCH</p><h2>聯絡資訊</h2><p>以下資料尚待提供。取得確認資訊後，可直接更新此區內容。</p><p class="notice"><span aria-hidden="true">✳</span> 目前沒有可公開的聯絡資料</p></div><div class="contact-details"><article class="contact-row"><span class="contact-icon" aria-hidden="true">⌖</span><div><h3>地址</h3><p class="pending">待提供</p></div></article><article class="contact-row"><span class="contact-icon" aria-hidden="true">↗</span><div><h3>電話</h3><p class="pending">待提供</p></div></article><article class="contact-row"><span class="contact-icon" aria-hidden="true">@</span><div><h3>Email</h3><p class="pending">待提供</p></div></article><article class="contact-row"><span class="contact-icon" aria-hidden="true">◷</span><div><h3>營業時間</h3><p class="pending">待提供</p></div></article></div></section>
-    <section class="visit-note"><div class="container visit-inner"><span class="visit-mark" aria-hidden="true">時</span><div><p class="eyebrow">A NOTE</p><h2>有了確認資訊，<br>我們就能在這裡好好相遇。</h2><p>地址、電話、Email 與營業時間更新後，可再加入地圖與聯絡連結。</p></div></div></section>
+  <!-- 無障礙跳躍連結 -->
+  <a class="skip-link" href="#mainContent">跳至主要內容</a>
+
+  <!-- 頂部共用導覽列 -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="回到時光雜貨店首頁">
+        <div class="brand-badge" aria-hidden="true">時</div>
+        <div class="brand-info">
+          <span class="brand-name">時光雜貨店</span>
+          <span class="brand-en">THE TIME APOTHECARY</span>
+        </div>
+      </a>
+
+      <!-- 行動版選單開關按鈕 -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="切換選單">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <!-- 主要導覽項目 -->
+      <nav class="primary-nav" id="primary-nav" aria-label="主要導覽">
+        <a class="nav-link" href="index.html">首頁</a>
+        <a class="nav-link" href="about.html">關於我們</a>
+        <a class="nav-link active" href="contact.html" aria-current="page">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主要內容區 -->
+  <main id="mainContent">
+    <!-- 1. 頁面標題與簡介 (Page Hero) -->
+    <section class="page-hero" aria-labelledby="contactHeroHeading">
+      <div class="container page-hero-inner">
+        <p class="eyebrow">✦ GUIDANCE &amp; PRECAUTIONS</p>
+        <h1 class="page-title" id="contactHeroHeading">聯絡我們與尋店指引</h1>
+        <p class="page-subtitle">
+          說明尋店方式與代價交換前的注意事項。當你在迷霧與星光中尋得店門，請備妥真心前來。
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 尋店指引與交換守則 (Guidance & Store Info Grid) -->
+    <section class="section-pad" aria-labelledby="guidanceHeading">
+      <div class="container contact-grid">
+        <!-- 左側：尋店指引與注意事項 -->
+        <div class="guidance-col">
+          <!-- 尋店方式說明 -->
+          <article class="guide-box">
+            <h3 id="guidanceHeading">
+              <span style="color: var(--gold);" aria-hidden="true">☾</span>
+              <span>深夜尋店方式指引</span>
+            </h3>
+            <p>
+              時光雜貨店是一處維度飄忽的隱世空間，並無固定的凡俗門牌號碼。只有在夜深人靜、子夜十二點鐘聲悠悠響起，且你心底懷抱著無可替代的遺憾時，方能於霧氣籠罩的老巷深處，看見那盞散發柔和古銅金光的招牌。
+            </p>
+            <p>
+              若你在空氣中隱約聞到乾燥薰衣草、羊皮紙與溫暖蜂蠟的氣味，並聽見微弱而規律的秒針逆行聲，順著微光前行，輕推那扇飾有星象徽紋的胡桃木門，便能正式進入時光雜貨店。
+            </p>
+          </article>
+
+          <!-- 代價交換前注意事項 -->
+          <article class="guide-box">
+            <h3>
+              <span style="color: var(--lavender);" aria-hidden="true">✦</span>
+              <span>代價交換前的重要注意事項</span>
+            </h3>
+            <p>
+              踏入店門進行交換前，請務必詳閱以下守則。時間之流莊嚴不可輕慢，每一次抉擇皆牽動因果：
+            </p>
+            <ul class="notice-list">
+              <li>
+                <strong>確認自我意志：</strong>請在造訪前深思，你是否真已準備好永遠割捨某段珍貴記憶、某種深刻情感，或屬於未來的歲月時間？
+              </li>
+              <li>
+                <strong>契約一經成立概不反悔：</strong>代價交換儀式完成後，因果即刻生效，古物無法退換，交付之記憶與情感亦無法重新取回。
+              </li>
+              <li>
+                <strong>一人一生限換一次：</strong>為了維持個人生命與大時空的平衡，每位造訪者一生僅有一次開啟時光倒轉契約的機會。
+              </li>
+              <li>
+                <strong>嚴禁危害大因果：</strong>本店古物僅限於個人心結與遺憾的撫平，絕無法用於侵奪他人因果或改變世界公理秩序。
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- 右側：聯絡資訊狀態卡（嚴格遵守大綱不編造、待補狀態規範） -->
+        <div class="info-col">
+          <aside class="info-card" aria-labelledby="infoTitle">
+            <h3 id="infoTitle">店鋪基本聯絡資訊</h3>
+
+            <div class="info-list">
+              <!-- 地址 -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">⌖</div>
+                <div class="info-content">
+                  <div class="info-label">實體門市地址</div>
+                  <div class="info-val pending">待補</div>
+                </div>
+              </div>
+
+              <!-- 電話 -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">☎</div>
+                <div class="info-content">
+                  <div class="info-label">聯絡專線電話</div>
+                  <div class="info-val pending">待補</div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">✉</div>
+                <div class="info-content">
+                  <div class="info-label">電子郵件信箱</div>
+                  <div class="info-val pending">待補</div>
+                </div>
+              </div>
+
+              <!-- 營業時間 -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">⏱</div>
+                <div class="info-content">
+                  <div class="info-label">營業接待時間</div>
+                  <div class="info-val pending">待補</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 說明備註（依據大綱第 7 點規範） -->
+            <div class="info-note">
+              <strong>※ 聯絡資訊待補說明：</strong><br>
+              本店目前未公開具體門市地址、電話與電子郵件。依據大綱規範，待取得確認資料後，方會建立 Google 地圖定位、點擊通話與郵件發送等連結。本次亦不建立線上表單，敬請見諒。
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 結語提示區塊 -->
+    <section class="cta-band" aria-labelledby="contactCtaHeading">
+      <div class="container cta-inner">
+        <p class="eyebrow">✦ WAITING IN THE STARLIGHT</p>
+        <h2 class="cta-title" id="contactCtaHeading">在迷霧散去之前，<br>請靜待星光的指引。</h2>
+        <p class="cta-desc">
+          若你已明白交換的真意，不妨先回到首頁重溫古物特性，或閱讀起源故事，等待屬於你的造訪契機。
+        </p>
+        <div class="cta-buttons">
+          <a class="btn btn-gold" href="index.html">返回首頁探索</a>
+          <a class="btn btn-outline" href="about.html">閱讀經營理念</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">時</span><span>時光雜貨店<small>OBJECTS WITH STORIES</small></span></a><p>我們相信生活，<br>只需要一點心意。</p><nav aria-label="頁尾導覽"><a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="contact.html" aria-current="page">聯絡我們</a></nav><small class="copyright">© 時光雜貨店</small></div></footer>
+
+  <!-- 底部共用頁尾 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="回到時光雜貨店首頁">
+          <div class="brand-badge" aria-hidden="true">時</div>
+          <div class="brand-info">
+            <span class="brand-name">時光雜貨店</span>
+            <span class="brand-en">THE TIME APOTHECARY</span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">
+          為心懷遺憾的人們，提供世界上唯一的時光古物。在星光與鐘擺的見證下，讓沉重過去換來溫柔釋懷。
+        </p>
+      </div>
+
+      <div class="footer-motto-box">
+        <div class="footer-motto-label">BRAND MOTTO</div>
+        <div class="footer-motto-text">「我們不收金錢，只收你願意付出的代價。」</div>
+      </div>
+
+      <nav class="footer-nav" aria-label="頁尾快速導覽">
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於我們</a>
+        <a href="contact.html" class="active" aria-current="page">聯絡我們</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 時光雜貨店 版權所有｜All Rights Reserved.</div>
+      <div>DRIVEN BY MEMORY &amp; ETERNITY</div>
+    </div>
+  </footer>
 </body>
 </html>

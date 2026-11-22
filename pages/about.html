@@ -1,18 +1,201 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f0e6"><meta name="description" content="認識時光雜貨店的起點，以及我們挑選復古好物的想法。">
-  <title>關於我們｜時光雜貨店</title><link rel="stylesheet" href="assets/css/site.css"><script src="assets/js/site.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="關於時光雜貨店｜探索雜貨店的起源故事、三大經營理念與夢幻古董店內部環境。我們深知每份遺憾的重量，以誠實與敬畏守護每一次時空交換。">
+  <title>關於我們｜時光雜貨店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳至主要內容</a>
-  <header class="site-header"><div class="container header-inner"><a class="brand" href="index.html" aria-label="時光雜貨店首頁"><span class="brand-mark" aria-hidden="true">時</span><span>時光雜貨店<small>OBJECTS WITH STORIES</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">開啟選單</span></button><nav class="primary-nav" id="primary-nav" aria-label="主要導覽"><a href="index.html">首頁</a><a href="about.html" aria-current="page">關於我們</a><a href="contact.html">聯絡我們</a></nav></div></header>
-  <main id="main">
-    <section class="page-hero container"><p class="eyebrow">OUR STORY</p><h1>一間想把好日子，<br><em>好好收藏的小店。</em></h1><p class="lead">從喜歡一件物品開始，慢慢找到生活裡值得留下的東西。</p><div class="page-hero-art about-art" aria-hidden="true"><span class="about-stamp">選物<br>日常</span><div class="about-lines"></div><span class="about-art-note">FOUND, LOVED, LIVED</span></div></section>
-    <section class="section-pad container story-grid"><div class="story-aside"><p class="eyebrow">A BEGINNING</p><span class="big-letter" aria-hidden="true">時</span><p>從一份喜歡<br>開始收藏。</p></div><div class="story-copy"><h2>起點，是對日常小物的喜歡。</h2><p>時光雜貨店以復古選品與日常器物為主題，想分享那些有質地、有故事，也能自然融入生活的物件。這裡沒有催促你添購更多的理由，只有一份邀請：花一點時間，看看什麼真正適合自己。</p><p>我們在意物件如何被使用、如何陪伴生活，也相信舊物與新日常可以自在相遇。每一件選品，都希望能成為生活裡恰到好處的一部分。</p></div></section>
-    <section class="values-section section-pad"><div class="container"><div class="section-heading"><div><p class="eyebrow">OUR WAY OF CHOOSING</p><h2>選物的三個小原則</h2></div><p class="heading-note">讓喜歡，不只停留在第一眼。</p></div><div class="values-grid"><article><span>01 / 留意質地</span><h3>看見細節</h3><p>留心材料、手感與使用痕跡，讓物件的個性慢慢被看見。</p></article><article><span>02 / 回到日常</span><h3>適合生活</h3><p>好看的同時，也能陪伴日常；實用與美感可以一起存在。</p></article><article><span>03 / 慢慢挑選</span><h3>珍惜長久</h3><p>不急著追上流行，挑選值得長久相處、反覆使用的好物。</p></article></div></div></section>
-    <section class="section-pad container about-quote"><p class="eyebrow">A NOTE FROM OUR SHOP</p><blockquote>「生活不用一次改變很多，<br>從一件真心喜歡的物品開始就好。」</blockquote><a class="text-link" href="contact.html">想和我們聊聊？ <span aria-hidden="true">→</span></a></section>
+  <!-- 無障礙跳躍連結 -->
+  <a class="skip-link" href="#mainContent">跳至主要內容</a>
+
+  <!-- 頂部共用導覽列 -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="回到時光雜貨店首頁">
+        <div class="brand-badge" aria-hidden="true">時</div>
+        <div class="brand-info">
+          <span class="brand-name">時光雜貨店</span>
+          <span class="brand-en">THE TIME APOTHECARY</span>
+        </div>
+      </a>
+
+      <!-- 行動版選單開關按鈕 -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="切換選單">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <!-- 主要導覽項目 -->
+      <nav class="primary-nav" id="primary-nav" aria-label="主要導覽">
+        <a class="nav-link" href="index.html">首頁</a>
+        <a class="nav-link active" href="about.html" aria-current="page">關於我們</a>
+        <a class="nav-link" href="contact.html">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主要內容區 -->
+  <main id="mainContent">
+    <!-- 1. 頁面標題與簡介 (Page Hero) -->
+    <section class="page-hero" aria-labelledby="aboutHeroHeading">
+      <div class="container page-hero-inner">
+        <p class="eyebrow">✦ ORIGIN &amp; PHILOSOPHY</p>
+        <h1 class="page-title" id="aboutHeroHeading">關於時光雜貨店</h1>
+        <p class="page-subtitle">
+          因見證世人對過往遺憾的執念，在星光與鐘擺交錯處開設只收「代價」不收金錢的時光雜貨店。
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 品牌故事：成立起點 (Brand Story) -->
+    <section class="section-pad" aria-labelledby="storyHeading">
+      <div class="container story-grid">
+        <div class="story-text">
+          <p class="eyebrow">✦ THE BEGINNING OF ETERNITY</p>
+          <h2 class="section-title" id="storyHeading" style="font-size: 32px; text-align: left;">
+            成立起點：<br>
+            <span class="gold">因見證人間遺憾而誕生的港灣</span>
+          </h2>
+          <p>
+            漫長歲月裡，店主曾無數次凝視人們在命運的岔路口懊悔哭泣——那句被風吹散的告白、那一通未能接聽的長途電話，或是年少時因賭氣而擦肩而過的摯愛。人世間最強烈的靈魂波動，往往不是欲望或野心，而是那些永遠無法挽回的「如果當初」。
+          </p>
+          <p>
+            這些沉重的遺憾凝聚成強大的時空引力，最終在星光與鐘擺交錯的裂隙之中，催生了這座只在深夜開啟的「時光雜貨店」。
+          </p>
+          <p>
+            我們在此蒐集被時光遺落的古老道具，不為榮華富貴，只為給那些深陷執念的人一次重新拾起勇氣的契機。但我們亦深知時間的莊嚴，因此立下了「代價交換」的鐵律：唯有真正願意割捨心中珍寶之人，方能觸摸時光的權柄。
+          </p>
+        </div>
+
+        <div class="story-quote-card">
+          <div style="font-size: 36px; color: var(--gold); margin-bottom: 12px;" aria-hidden="true">❝</div>
+          <blockquote>
+            「世人皆以為時間無情，<br>
+            然而最殘酷的，往往是未能說出口的心意。<br>
+            若你願以一段記憶作為通行證，<br>
+            這裡的每一面鐘，都願為你逆向旋轉。」
+          </blockquote>
+          <div class="story-quote-author">— 時光雜貨店 店主手札</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 經營理念：三項品牌堅持 (Brand Principles) -->
+    <section class="section-pad" style="background: rgba(18, 12, 38, 0.4); border-top: 1px solid var(--gold-border-subtle); border-bottom: 1px solid var(--gold-border-subtle);" aria-labelledby="principlesHeading">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">✦ GUIDING PRINCIPLES</p>
+          <h2 class="section-title" id="principlesHeading">我們的<span class="gold">三項品牌堅持</span></h2>
+          <p class="section-desc">穿梭於時間與因果的界線之間，我們謹守三條不可撼動的鐵則，守護每位客人的靈魂安全。</p>
+        </div>
+
+        <div class="principles-grid">
+          <!-- 堅持 01 -->
+          <article class="glass-card principle-card">
+            <span class="principle-tag">PRINCIPLE 01</span>
+            <h3 class="principle-title">誠實揭露代價</h3>
+            <p class="principle-desc">
+              每一件奇幻古物所需扣除的代價——無論是一段珍藏的初戀記憶、某種感知快樂的情緒，或是未來數年的壽命——在契約締結前皆會如實、巨細靡遺地告知，絕無任何欺瞞與隱形代價。
+            </p>
+          </article>
+
+          <!-- 堅持 02 -->
+          <article class="glass-card principle-card">
+            <span class="principle-tag">PRINCIPLE 02</span>
+            <h3 class="principle-title">尊重每份遺憾</h3>
+            <p class="principle-desc">
+              踏進店門的每一位旅人，背後都有不足為外人道的深沉心碎。店內不作世俗道德的評判與嘲弄，我們以最虔敬、溫柔的態度傾聽每段因果，守護每位造訪者最後的尊嚴。
+            </p>
+          </article>
+
+          <!-- 堅持 03 -->
+          <article class="glass-card principle-card">
+            <span class="principle-tag">PRINCIPLE 03</span>
+            <h3 class="principle-title">守護時空平衡</h3>
+            <p class="principle-desc">
+              逆轉時光乃窺探天道之法。我們嚴格規範古物的影響半徑，禁止任何可能顛覆世界運轉的毀滅性操作。我們只撫平微觀個人的心靈創傷，確保宇宙的大因果律不致崩解。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 環境介紹 (Environment) -->
+    <section class="section-pad" aria-labelledby="envHeading">
+      <div class="container env-grid">
+        <div class="env-media">
+          <div class="env-media-frame">
+            <img 
+              src="assets/images/about-shop-interior.svg" 
+              alt="時光雜貨店內部陳列著時鐘、記憶水晶瓶與微光古董的靜謐空間" 
+              width="560" 
+              height="380" 
+              class="env-media-img"
+            >
+          </div>
+        </div>
+
+        <div class="env-content">
+          <p class="eyebrow">✦ THE SANCTUARY INTERIOR</p>
+          <h2 class="section-title" id="envHeading" style="font-size: 32px; text-align: left;">
+            夢幻古董店內部空間：<br>
+            <span class="lavender">凝結歲月的靜謐之所</span>
+          </h2>
+          <p>
+            推開沉重而溫潤的胡桃木大門，店內瀰漫著乾燥薰衣草、古老羊皮紙與燃燒蜂蠟的微甜香氣。兩側頂天立地的老橡木博古架上，陳列著來自各個時空的微光逸品——封存在玻璃鐘罩內的記憶光球緩緩旋轉，折射出紫羅蘭與琥珀色的柔和微光。
+          </p>
+          <p>
+            正中央的落地古銅鐘擺以沉靜恆定的頻率擺動，彷彿在此處，凡塵所有焦慮與時限都被溫柔地按下了暫停鍵。櫃檯後的古典壁爐散發著不灼人的微光，為每一位前來尋求救贖的旅人，提供一處安心傾訴心願的避風港。
+          </p>
+          <a class="btn btn-gold" href="contact.html">
+            <span>前往聯絡我們</span>
+            <span aria-hidden="true">➔</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">時</span><span>時光雜貨店<small>OBJECTS WITH STORIES</small></span></a><p>我們相信生活，<br>只需要一點心意。</p><nav aria-label="頁尾導覽"><a href="index.html">首頁</a><a href="about.html" aria-current="page">關於我們</a><a href="contact.html">聯絡我們</a></nav><small class="copyright">© 時光雜貨店</small></div></footer>
+
+  <!-- 底部共用頁尾 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="回到時光雜貨店首頁">
+          <div class="brand-badge" aria-hidden="true">時</div>
+          <div class="brand-info">
+            <span class="brand-name">時光雜貨店</span>
+            <span class="brand-en">THE TIME APOTHECARY</span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">
+          為心懷遺憾的人們，提供世界上唯一的時光古物。在星光與鐘擺的見證下，讓沉重過去換來溫柔釋懷。
+        </p>
+      </div>
+
+      <div class="footer-motto-box">
+        <div class="footer-motto-label">BRAND MOTTO</div>
+        <div class="footer-motto-text">「我們不收金錢，只收你願意付出的代價。」</div>
+      </div>
+
+      <nav class="footer-nav" aria-label="頁尾快速導覽">
+        <a href="index.html">首頁</a>
+        <a href="about.html" class="active" aria-current="page">關於我們</a>
+        <a href="contact.html">聯絡我們</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 時光雜貨店 版權所有｜All Rights Reserved.</div>
+      <div>DRIVEN BY MEMORY &amp; ETERNITY</div>
+    </div>
+  </footer>
 </body>
 </html>
