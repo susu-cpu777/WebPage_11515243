@@ -795,11 +795,11 @@ img, svg {
 .about-relics .relic-cost-pill {
   display: inline-block;
   align-self: flex-start;
-  padding: 4px 10px;
-  font-size: 12px;
-  color: #ff9e9e;
-  background: rgba(235, 75, 75, 0.16);
-  border: 1px solid rgba(255, 110, 110, 0.35);
+  padding: 4px 12px;
+  font-size: 12.5px;
+  color: var(--gold-light);
+  background: rgba(223, 183, 118, 0.12);
+  border: 1px solid rgba(223, 183, 118, 0.3);
   border-radius: var(--radius-full);
   margin-bottom: 14px;
   font-weight: 600;
