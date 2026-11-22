@@ -37,7 +37,7 @@
   /* Layout */
   --max-width: 1140px;
   --header-height: 84px;
-  --radius-sm: 6px;
+  --radius-sm: 2px;
   --radius-md: 12px;
   --radius-lg: 20px;
   
@@ -1030,7 +1030,7 @@ img, svg {
   padding: 14px;
   background: rgba(199, 155, 255, 0.06);
   border-left: 3px solid var(--lavender);
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 /* 14. Site Footer */
@@ -1205,7 +1205,7 @@ img, svg {
   .nav-link {
     font-size: 17px;
     padding: 12px 14px;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     background: rgba(255, 255, 255, 0.03);
   }
   
