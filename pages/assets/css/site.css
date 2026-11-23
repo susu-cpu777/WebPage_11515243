@@ -917,6 +917,15 @@ img, svg {
   gap: 10px;
 }
 
+.contact-grid .contact-motto {
+  margin: 4px 0;
+  color: var(--gold-light);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.85;
+  text-align: center;
+}
+
 .guide-box p {
   color: var(--text-muted);
   font-size: 15px;
